@@ -43,7 +43,7 @@ async def logUserBot():
     if not await client.is_user_authorized():
         await client.send_code_request(phone_number)
         await client.sign_in(phone_number, input('Ingrese el código de verificación: '))
-    await client.send_message("@spamm2024", f'<b>Bot encendido</b>', parse_mode="HTML")
+    await client.send_message("@spamkedian", f'<b>Bot encendido</b>', parse_mode="HTML")
     spammer_group = int("-1002124803900")
 
     while True:
@@ -51,7 +51,7 @@ async def logUserBot():
         messages_list = await getMessagesFromGroup(client, spammer_group)
             
         try:
-            await client.send_message("@spamm2024", f"<b>CANTIDAD DE MENSAJES CONSEGUIDOS PARA PUBLICAR</b> <code>{len(messages_list)-1}</code>",parse_mode="HTML")
+            await client.send_message("@spamkedian", f"<b>CANTIDAD DE MENSAJES CONSEGUIDOS PARA PUBLICAR</b> <code>{len(messages_list)-1}</code>",parse_mode="HTML")
         except:
             pass
             
@@ -65,13 +65,14 @@ async def logUserBot():
                         try:
                             await client.send_message(i["group_id"], message_spam)
                         except Exception as error:
-                            await client.send_message("@spamm2024", f'<b>Error enviando mensajes a  a {i["group_id"]}</b> - <code>{i["group_name"]}<code>\nCausa:{error}',parse_mode="HTML")
+                            await client.send_message("@spamkedian", f'<b>Error enviando mensajes a  a {i["group_id"]}</b> - <code>{i["group_name"]}<code>\nCausa:{error}',parse_mode="HTML")
                             resultado = False
                         if resultado:
-                            await client.send_message("@spamm2024", f'<b>Mensaje enviado a {i["group_id"]}</b> - <code>{i["group_name"]}</code>',parse_mode="HTML")  
+                            await client.send_message("@spamkedian", f'<b>Mensaje enviado a {i["group_id"]}</b> - <code>{i["group_name"]}</code>',parse_mode="HTML")  
+                        else: break
                         await asyncio.sleep(5)
                         if j==3: break
-            await client.send_message("@spamm2024", f'<b>RONDA ACABADA</b>', parse_mode="HTML")
+            await client.send_message("@spamkedian", f'<b>RONDA ACABADA</b>', parse_mode="HTML")
             await asyncio.sleep(420) 
         except:
             pass
