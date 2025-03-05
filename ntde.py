@@ -70,8 +70,8 @@ async def logUserBot():
                         if resultado:
                             await client.send_message("@spamkedian", f'<b>Mensaje enviado a {i["group_id"]}</b> - <code>{i["group_name"]}</code>',parse_mode="HTML")  
                         else: break
-                        await asyncio.sleep(5)
-                        if j==3: break
+                        await asyncio.sleep(10)
+                        if j==1: break
             await client.send_message("@spamkedian", f'<b>RONDA ACABADA</b>', parse_mode="HTML")
             await asyncio.sleep(420) 
         except:
