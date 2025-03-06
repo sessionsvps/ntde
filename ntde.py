@@ -57,7 +57,7 @@ async def logUserBot():
             
         try:
             for i in groups_info:
-                if i['group_name'] not in ["Spam 2024"]:
+                if i['group_name'] not in ["Spam 2025", "Spam 2024"]:
                     j=0
                     for message_spam in messages_list:
                         j+=1
